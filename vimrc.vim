@@ -7,3 +7,5 @@ Plug 'nvim-tree/nvim-tree.lua'
 
 call plug#end() " End plugins section
 
+inoremap <C-Del> <C-o>dw
+; " Find a way to move this to keymaps.lua (allows Ctrl+Del in insert mode)
