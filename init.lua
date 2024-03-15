@@ -34,3 +34,23 @@ bufferline.setup {
 }
 local class = require "middleclass" -- load middleclass file for windows.nvim
 require("windows").setup() -- load windows plugin
+require("lualine").setup {
+	options = {
+    	icons_enabled = true,
+	    theme = 'nightfly',
+	    component_separators = { left = '', right = ''},
+	    section_separators = { left = '', right = ''},
+	    disabled_filetypes = {
+	    statusline = {},
+    	winbar = {},
+    },
+    ignore_focus = {},
+    always_divide_middle = true,
+    globalstatus = false,
+	refresh = {
+	    statusline = 1000,
+	    tabline = 1000,
+    	winbar = 1000,
+    }
+  },
+}
