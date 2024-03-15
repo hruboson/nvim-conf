@@ -9,6 +9,7 @@ Plug 'akinsho/bufferline.nvim', {'tag':'*'} " Buffeline (file tabs)
 Plug 'anuvyklack/windows.nvim' " Windows manager plugin
 Plug 'nvim-lualine/lualine.nvim' " Lualine - bottom statusline
 Plug 'rrethy/vim-illuminate' " Highlight the same keyword as under cursor
+Plug 'echasnovski/mini.nvim' " Nvim starting screen
 
 Plug 'nvim-tree/nvim-tree.lua' " File tree window
 Plug 'nvim-tree/nvim-web-devicons' " Icons for nvim-tree

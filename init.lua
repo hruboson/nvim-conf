@@ -64,3 +64,4 @@ require('illuminate').configure({ -- illuminate plugin config
     -- delay: delay in milliseconds
     delay = 0,
 })
+require('mini.starter').setup() 
