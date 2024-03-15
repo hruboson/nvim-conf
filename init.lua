@@ -5,12 +5,19 @@ vim.cmd.source(vimrc)
 -- include all config files
 require "main.plugins"
 require "main.options"
-require "main.dracula"
+require "main.theme"
 require "main.keymaps"
-require "main.ntree_conf"
-require "main.treesitter_conf"
-require "nvim-treesitter.configs".setup { -- load treesitter plugin
+
+-- plugin files
+require "main.pconf_ntree"
+require "main.pconf_treesitter"
+require "nvim-treesitter.configs".setup { -- load treesitter
   highlight = {
     enable = true,              -- false will disable the whole extension
   },
 }
+require "main.pconf_autopairs"
+require "nvim-autopairs".setup { -- load autopairs
+    check_ts = true,
+}
+require("ibl").setup()
