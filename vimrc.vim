@@ -3,10 +3,15 @@ call plug#begin('~/.local/share/nvim/stat/autoload/plugged') " Begin plugins sec
 Plug 'Mofiqul/dracula.nvim' " Dracula theme
 Plug 'folke/tokyonight.nvim' " TokyoNight theme
 Plug 'nvim-treesitter/nvim-treesitter' " syntax highlighting
-Plug 'nvim-tree/nvim-web-devicons' " Icons for nvim-tree
-Plug 'nvim-tree/nvim-tree.lua' " File tree window
 Plug 'windwp/nvim-autopairs' " Bracket autopairs
 Plug 'lukas-reineke/indent-blankline.nvim' " Leading lines for indentation (vs-code like)
+Plug 'akinsho/bufferline.nvim', {'tag':'*'} " Buffeline (file tabs)
+
+Plug 'nvim-tree/nvim-tree.lua' " File tree window
+Plug 'nvim-tree/nvim-web-devicons' " Icons for nvim-tree
+
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.6' } " Telescope
+Plug 'nvim-lua/plenary.nvim' " Telescope dependency
 
 call plug#end() " End plugins section
 

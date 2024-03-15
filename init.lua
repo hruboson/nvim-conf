@@ -3,7 +3,6 @@ local vimrc = vim.fn.stdpath("config") .. "/vimrc.vim"
 vim.cmd.source(vimrc)
 
 -- include all config files
-require "main.plugins"
 require "main.options"
 require "main.theme"
 require "main.keymaps"
@@ -21,3 +20,15 @@ require "nvim-autopairs".setup { -- load autopairs
     check_ts = true,
 }
 require("ibl").setup()
+require("telescope.builtin")
+local bufferline = require('bufferline')
+bufferline.setup {
+	options = {
+		always_show_bufferline = true,
+		hover = {
+			enabled = true,
+			delay = 200,
+			reveal = {'close'}
+        },
+	}
+}
