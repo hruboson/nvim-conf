@@ -6,10 +6,11 @@ Plug 'nvim-treesitter/nvim-treesitter' " syntax highlighting
 Plug 'windwp/nvim-autopairs' " Bracket autopairs
 Plug 'lukas-reineke/indent-blankline.nvim' " Leading lines for indentation (vs-code like)
 Plug 'akinsho/bufferline.nvim', {'tag':'*'} " Buffeline (file tabs)
-Plug 'anuvyklack/windows.nvim' " Windows manager plugin
+" Plug 'anuvyklack/windows.nvim' " Windows manager plugin
 Plug 'nvim-lualine/lualine.nvim' " Lualine - bottom statusline
 Plug 'rrethy/vim-illuminate' " Highlight the same keyword as under cursor
 Plug 'echasnovski/mini.nvim' " Nvim starting screen
+Plug 'mbbill/undotree' " Undotree
 
 Plug 'nvim-tree/nvim-tree.lua' " File tree window
 Plug 'nvim-tree/nvim-web-devicons' " Icons for nvim-tree

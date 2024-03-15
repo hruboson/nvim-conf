@@ -32,9 +32,7 @@ bufferline.setup {
         },
 	}
 }
-local class = require "middleclass" -- load middleclass file for windows.nvim
-require("windows").setup() -- load windows plugin
-require("lualine").setup {
+require("lualine").setup { -- load lualine
 	options = {
     	icons_enabled = true,
 	    theme = 'nightfly',
