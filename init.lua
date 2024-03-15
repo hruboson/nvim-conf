@@ -21,7 +21,7 @@ require "nvim-autopairs".setup { -- load autopairs
 }
 require("ibl").setup()
 require("telescope.builtin")
-local bufferline = require('bufferline')
+local bufferline = require("bufferline") -- load bufferline
 bufferline.setup {
 	options = {
 		always_show_bufferline = true,
@@ -32,3 +32,5 @@ bufferline.setup {
         },
 	}
 }
+local class = require "middleclass" -- load middleclass file for windows.nvim
+require("windows").setup() -- load windows plugin
