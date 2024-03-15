@@ -1,1 +1,1 @@
--- vim.api.nvim_create_autocmd('VimEnter', {command = "NvimTreeOpen"})
+vim.api.nvim_create_autocmd('VimEnter', {command = "NvimTreeOpen"})
