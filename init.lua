@@ -6,6 +6,7 @@ vim.cmd.source(vimrc)
 require "main.options"
 require "main.theme"
 require "main.keymaps"
+require "main.autoload"
 
 -- plugin files
 require "main.pconf_ntree"
@@ -15,7 +16,6 @@ require "nvim-treesitter.configs".setup { -- load treesitter
     enable = true,              -- false will disable the whole extension
   },
 }
-require "main.pconf_autopairs"
 require "nvim-autopairs".setup { -- load autopairs
     check_ts = true,
 }
