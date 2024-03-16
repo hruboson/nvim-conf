@@ -8,6 +8,7 @@ require "main.options"
 require "main.theme"
 require "main.keymaps"
 require "main.autoload"	
+require "main.lsp"
 
 -- plugin files
 require "main.pconf_ntree"
@@ -20,7 +21,24 @@ require "nvim-treesitter.configs".setup { -- load treesitter
 require "nvim-autopairs".setup { -- load autopairs
     check_ts = true,
 }
-require("ibl").setup()
+require("ibl").setup({ -- load indent blankline
+	debounce = 100,
+	indent = { char = "|" },
+	whitespace = { highlight = { "Whitespace", "NonText" } },
+	exclude = { 
+		filetypes = {
+			"packer",
+			"nvimtree",
+			"dashboard",
+			"help"
+		},
+		buftypes = {
+			"terminal",
+			"nofile",
+			"quickfix"
+		}
+	} 
+})
 require("telescope.builtin")
 local bufferline = require("bufferline") -- load bufferline
 bufferline.setup {
@@ -62,4 +80,10 @@ require('illuminate').configure({ -- illuminate plugin config
     },
     -- delay: delay in milliseconds
     delay = 0,
+	filetypes_denylist = {
+    	'dirvish',
+        'fugitive',
+		'nvimtree',
+    },
 })
+

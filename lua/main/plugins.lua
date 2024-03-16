@@ -49,15 +49,20 @@ return packer.startup(function(use)
 	use { "akinsho/bufferline.nvim" } -- Bufferline (file tabs)
 	use { "nvim-lualine/lualine.nvim" } -- Bottom statusline
 	use { "rrethy/vim-illuminate" } -- Highlight the same keyword as under cursor
-	use ({
-		"folke/drop.nvim",
-		event = "VimEnter",
+	use {
+		'nvimdev/dashboard-nvim',
+		event = 'VimEnter',
 		config = function()
-			require("drop").setup({
-				theme = "spring"
-			})
+			require('dashboard').setup {
+				config = {
+					header = true, -- type is table def
+					week_header = {
+						enable = true,  --boolean use a week header
+					},
+				}
+			}
 		end,
-	})
+	}	
 	use {
 		'VonHeikemen/fine-cmdline.nvim',
 		requires = {
@@ -71,6 +76,11 @@ return packer.startup(function(use)
 
 	use { "nvim-telescope/telescope.nvim" } -- File explorer
 	use { "nvim-lua/plenary.nvim" } -- Lua dependecy
+
+	use { "ms-jpq/coq-nvim", branch = "coq" } -- Autocompletion and other LSP stuff
+	use { "ms-jpq/coq.artifacts", branch = "artifacts" } -- Code snippets for coq
+	use { "ms-jpq/coq.thirdparty", branch = "3p" } -- Other stuff for coq
+	use { "neovim/nvim-lspconfig" } -- Neovim official LSP support plugin
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
