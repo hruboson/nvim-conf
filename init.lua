@@ -1,12 +1,13 @@
 -- set init.vim (now vimrc.vim) file location and run commands (config) in it
-local vimrc = vim.fn.stdpath("config") .. "/vimrc.vim"
-vim.cmd.source(vimrc)
+-- local vimrc = vim.fn.stdpath("config") .. "/vimrc.vim"
+-- vim.cmd.source(vimrc)
 
 -- include all config files
+require "main.plugins"
 require "main.options"
 require "main.theme"
 require "main.keymaps"
-require "main.autoload"
+require "main.autoload"	
 
 -- plugin files
 require "main.pconf_ntree"
@@ -62,4 +63,3 @@ require('illuminate').configure({ -- illuminate plugin config
     -- delay: delay in milliseconds
     delay = 0,
 })
-require('mini.starter').setup() 
