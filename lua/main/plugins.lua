@@ -12,14 +12,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]])
-
 vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
 vim.g.maplocalleader = "\\" -- Same for `maplocalleader`
 
@@ -34,6 +26,8 @@ require("lazy").setup({ -- Enable Lazy
 	{ "akinsho/bufferline.nvim" }, -- Bufferline (file tabs)
 	{ "nvim-lualine/lualine.nvim" }, -- Bottom statusline
 	{ "rrethy/vim-illuminate" }, -- Highlight the same keyword as under cursor
+	{ "andweeb/presence.nvim" }, -- Discord rich presence (doesn't seem to work on Windows)
+	{ "dcampos/nvim-sftp-sync" }, -- SFTP sync tool, servrs defined in lua/main/sftp.lua (dependencies: pip install pysftp, pynvim)
 	{
 		'nvimdev/dashboard-nvim',
 		event = 'VimEnter',

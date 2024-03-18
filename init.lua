@@ -9,6 +9,7 @@ require "main.theme"
 require "main.keymaps"
 require "main.autoload"	
 require "main.lsp"
+require "main.sftp"
 
 -- plugin files
 require "main.pconf_ntree"
@@ -23,7 +24,6 @@ require "nvim-autopairs".setup { -- load autopairs
 }
 require("ibl").setup({ -- load indent blankline
 	debounce = 100,
-	indent = { char = "|" },
 	whitespace = { highlight = { "Whitespace", "NonText" } },
 	exclude = { 
 		filetypes = {
@@ -86,4 +86,5 @@ require('illuminate').configure({ -- illuminate plugin config
 		'nvimtree',
     },
 })
+require('presence').setup()
 
