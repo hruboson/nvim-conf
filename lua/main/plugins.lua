@@ -26,13 +26,16 @@ require("lazy").setup({ -- Enable Lazy
 	{ "akinsho/bufferline.nvim" }, -- Bufferline (file tabs)
 	{ "nvim-lualine/lualine.nvim" }, -- Bottom statusline
 	{ "rrethy/vim-illuminate" }, -- Highlight the same keyword as under cursor
-	{ "andweeb/presence.nvim" }, -- Discord rich presence (doesn't seem to work on Windows)
-	{ "dcampos/nvim-sftp-sync" }, -- SFTP sync tool, servrs defined in lua/main/sftp.lua (dependencies: pip install pysftp, pynvim)
+	{ "andweeb/presence.nvim" }, -- Discord rich presence (doesn"t seem to work on Windows)
+	{ -- SFTP sync tool, servrs defined in lua/main/sftp.lua (dependencies: pip install pysftp, pynvim)
+	  	"dcampos/nvim-sftp-sync",
+	  	build = ":UpdateRemotePlugins"
+	},	
 	{
-		'nvimdev/dashboard-nvim',
-		event = 'VimEnter',
+		"nvimdev/dashboard-nvim",
+		event = "VimEnter",
 		config = function()
-			require('dashboard').setup {
+			require("dashboard").setup {
 				config = {
 					header = true,
 					week_header = {
@@ -43,9 +46,9 @@ require("lazy").setup({ -- Enable Lazy
 		end,
 	},	
 	{
-		'VonHeikemen/fine-cmdline.nvim',
+		"VonHeikemen/fine-cmdline.nvim",
 		dependencies = {
-		    {'MunifTanjim/nui.nvim'}
+		    {"MunifTanjim/nui.nvim"}
 		}
 	},
 	{ "mbbill/undotree" }, -- Undo history (git-like)

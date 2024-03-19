@@ -87,4 +87,3 @@ require('illuminate').configure({ -- illuminate plugin config
     },
 })
 require('presence').setup()
-
