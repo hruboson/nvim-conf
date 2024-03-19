@@ -62,5 +62,19 @@ require("lazy").setup({ -- Enable Lazy
 	{ "ms-jpq/coq_nvim", branch = "coq" }, -- Autocompletion and other LSP stuff
 	{ "ms-jpq/coq.artifacts", branch = "artifacts" }, -- Code snippets for coq
 	{ "ms-jpq/coq.thirdparty", branch = "3p" }, -- Other stuff for coq
-	{ "neovim/nvim-lspconfig" }, -- Neovim official LSP support plugin
+
+	{
+	"williamboman/mason.nvim", -- LSP manager
+    	"williamboman/mason-lspconfig.nvim",
+    	"neovim/nvim-lspconfig", -- Neovim official LSP support plugin
+    	},
+	
+	-- LSP zero --
+	{'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
+	{'neovim/nvim-lspconfig'},
+	{'hrsh7th/cmp-nvim-lsp'},
+	{'hrsh7th/nvim-cmp'},
+	{'L3MON4D3/LuaSnip'},
+	--
+
 })
