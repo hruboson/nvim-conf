@@ -65,9 +65,9 @@ require("lazy").setup({ -- Enable Lazy
 
 	{
 	"williamboman/mason.nvim", -- LSP manager
-    	"williamboman/mason-lspconfig.nvim",
-    	"neovim/nvim-lspconfig", -- Neovim official LSP support plugin
-    	},
+	"williamboman/mason-lspconfig.nvim",
+	"neovim/nvim-lspconfig", -- Neovim official LSP support plugin
+	},
 	
 	-- LSP zero --
 	{'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
