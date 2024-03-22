@@ -1,5 +1,4 @@
-local opts = { noremap = true, silent = true }
-local keymap = vim.api.nvim_set_keymap -- shortcut function
+require'mapx'.setup{ global = true }
 
 -- Modes
 -- 		NORMAL = "n"
@@ -12,12 +11,13 @@ local keymap = vim.api.nvim_set_keymap -- shortcut function
 -- 		For commands it is necessary to also specify to "run" the command with <cr> (Enter)
 
 -- INSERT
-keymap("i", "<C-H>", "<C-W>", opts) -- allow Ctrl+Backspace
-keymap("i", "<C-Del>", "<C-o>dw", opts)	-- allow Ctrl+Del
+inoremap("<C-H>", "<C-W>") -- allow Ctrl+Backspace
+inoremap("<C-Del>", "<C-o>dw")	-- allow Ctrl+Del
 
 -- NORMAL
-keymap("n", "<TAB>", "<C-^>", opts) -- alternate between buffers in normal mode using tab 
-keymap("n", "<C-x>", ":NvimTreeToggle<cr>", opts) -- open/close NvimTree
-keymap("n", ":", "<cmd>FineCmdline<CR>", opts)
-keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+nnoremap("<TAB>", "<C-^>") -- alternate between buffers in normal mode using tab 
+nnoremap("<C-x>", ":NvimTreeToggle<cr>") -- open/close NvimTree
+nnoremap(":", "<cmd>FineCmdline<CR>")
+nnoremap("gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
+nnoremap("gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
+nnoremap("<C-s>", ":!scp % xhrub01@merlin.fit.vutbr.cz:/homes/eva/xh/xhrubo01")

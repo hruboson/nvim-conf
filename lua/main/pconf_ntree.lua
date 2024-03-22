@@ -2,6 +2,9 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- set commandline root to open file
+vim.g.nvim_tree_respect_buf_cwd = 1
+
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true
 
@@ -23,7 +26,7 @@ require("nvim-tree").setup({
 		group_empty = true,
 	},
 	filters = {
-		dotfiles = true,
+		dotfiles = false,
 	},
 	auto_reload_on_write = true,
 })

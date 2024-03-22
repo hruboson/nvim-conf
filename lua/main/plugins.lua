@@ -27,10 +27,6 @@ require("lazy").setup({ -- Enable Lazy
 	{ "nvim-lualine/lualine.nvim" }, -- Bottom statusline
 	{ "rrethy/vim-illuminate" }, -- Highlight the same keyword as under cursor
 	{ "andweeb/presence.nvim" }, -- Discord rich presence (doesn"t seem to work on Windows)
-	{ -- SFTP sync tool, servrs defined in lua/main/sftp.lua (dependencies: pip install pysftp, pynvim)
-	  	"dcampos/nvim-sftp-sync",
-	  	build = ":UpdateRemotePlugins"
-	},	
 	{
 		"nvimdev/dashboard-nvim",
 		event = "VimEnter",
@@ -76,5 +72,7 @@ require("lazy").setup({ -- Enable Lazy
 	{'hrsh7th/nvim-cmp'},
 	{'L3MON4D3/LuaSnip'},
 	--
+	
+	{'b0o/mapx.nvim'}, -- easy keybinds
 
 })
