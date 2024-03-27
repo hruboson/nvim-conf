@@ -6,6 +6,7 @@ vim.opt.wrap = false					-- do not wrap long lines
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.mousemoveevent = true 			-- should allow tabs to hover but doesnt work for some reason ://
+vim.opt_local.formatoptions:remove({ 'r', 'o' }) -- disable commenting out the next line after comment line
 
 -- COQ settings
 vim.g.coq_settings = {
