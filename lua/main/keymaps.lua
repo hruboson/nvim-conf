@@ -15,12 +15,12 @@ inoremap("<C-H>", "<C-W>") -- allow Ctrl+Backspace
 inoremap("<C-Del>", "<C-o>dw")	-- allow Ctrl+Del
 
 -- NORMAL
-nnoremap("<TAB>", "<C-^>") -- alternate between buffers in normal mode using tab 
+nnoremap("<TAB>", ":bn<cr>") -- alternate between buffers in normal mode using tab 
 nnoremap("<C-x>", ":NvimTreeToggle<cr>") -- open/close NvimTree
 nnoremap(":", "<cmd>FineCmdline<CR>")
 nnoremap("gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
 nnoremap("gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
-nnoremap("<C-s>", ":scp % xhrub01@merlin.fit.vutbr.cz:/homes/eva/xh/xhrubo01")
+-- nnoremap("<C-s>", ":scp % xhrub01@merlin.fit.vutbr.cz:/homes/eva/xh/xhrubo01")
 nnoremap("d", "\"_d")
 nnoremap("dd", "\"_dd")
 nnoremap("x", "\"_x")
