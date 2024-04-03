@@ -74,5 +74,5 @@ require("lazy").setup({ -- Enable Lazy
 	--
 	
 	{'b0o/mapx.nvim'}, -- easy keybinds
-
+	{'dstein64/nvim-scrollview'}, -- scrollbar
 })
