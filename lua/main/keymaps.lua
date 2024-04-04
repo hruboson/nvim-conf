@@ -24,3 +24,6 @@ nnoremap("gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
 nnoremap("d", "\"_d")
 nnoremap("dd", "\"_dd")
 nnoremap("x", "\"_x")
+
+-- VISUAL
+vnoremap("<TAB>", ">gv") -- add multiple tabs to selection in visual mode
