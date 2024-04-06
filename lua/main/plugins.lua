@@ -23,7 +23,15 @@ require("lazy").setup({ -- Enable Lazy
 	{ "nvim-treesitter/nvim-treesitter" }, -- syntax highlighting
 	{ "windwp/nvim-autopairs" }, -- Bracket autopairs
 	{ "lukas-reineke/indent-blankline.nvim" }, -- Leading lines for indentation (vs-code like)
-	{ "akinsho/bufferline.nvim" }, -- Bufferline (file tabs)
+	{ -- cokeline
+	  "willothy/nvim-cokeline",
+	  dependencies = {
+		"nvim-lua/plenary.nvim",        -- Required for v0.4.0+
+		"nvim-tree/nvim-web-devicons", -- If you want devicons
+		"stevearc/resession.nvim"       -- Optional, for persistent history
+	  },
+	  config = true
+	},
 	{ "nvim-lualine/lualine.nvim" }, -- Bottom statusline
 	{ "rrethy/vim-illuminate" }, -- Highlight the same keyword as under cursor
 	{ "andweeb/presence.nvim" }, -- Discord rich presence (doesn"t seem to work on Windows)

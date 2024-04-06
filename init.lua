@@ -14,6 +14,7 @@ require "main.sftp"
 -- plugin files
 require "main.pconf_ntree"
 require "main.pconf_treesitter"
+require "main.pconf_cokeline"
 require "nvim-treesitter.configs".setup { -- load treesitter
   highlight = {
     enable = true,              -- false will disable the whole extension
@@ -40,17 +41,6 @@ require("ibl").setup({ -- load indent blankline
 	} 
 })
 require("telescope.builtin")
-local bufferline = require("bufferline") -- load bufferline
-bufferline.setup {
-	options = {
-		always_show_bufferline = true,
-		hover = {
-			enabled = true,
-			delay = 200,
-			reveal = {'close'}
-        },
-	}
-}
 require("lualine").setup { -- load lualine
 	options = {
     	icons_enabled = true,
@@ -87,3 +77,5 @@ require('illuminate').configure({ -- illuminate plugin config
     },
 })
 require('presence').setup()
+
+
