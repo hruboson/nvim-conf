@@ -90,9 +90,9 @@ require("lazy").setup({ -- Enable Lazy
 		ft = { "markdown" },
 		build = function() vim.fn["mkdp#util#install"]() end,
 	},
-	{ -- hint for nvim commands and shortcuts
-	   "m4xshen/hardtime.nvim",
-	   dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-	   opts = {}
-	},
+	--{ -- hint for nvim commands and shortcuts
+	--   "m4xshen/hardtime.nvim",
+	--   dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+	--   opts = {}
+	--},
 })

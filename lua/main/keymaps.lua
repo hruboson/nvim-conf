@@ -30,6 +30,7 @@ nnoremap("X", "\"_X")
 nnoremap("s", "\"_s")
 nnoremap("S", "\"_S")
 nnoremap("gx", "\"_gx")
+nnoremap("qf", "<cmd>lua vim.lsp.buf.code_action()<CR>")
 
 -- VISUAL
 -- remap all delete actions to void delete
