@@ -63,10 +63,6 @@ require("lazy").setup({ -- Enable Lazy
 	{ "nvim-telescope/telescope.nvim" }, -- File explorer
 	{ "nvim-lua/plenary.nvim" }, -- Lua dependecy
 
-	{ "ms-jpq/coq_nvim", branch = "coq" }, -- Autocompletion and other LSP stuff
-	{ "ms-jpq/coq.artifacts", branch = "artifacts" }, -- Code snippets for coq
-	{ "ms-jpq/coq.thirdparty", branch = "3p" }, -- Other stuff for coq
-
 	{
 	"williamboman/mason.nvim", -- LSP manager
 	"williamboman/mason-lspconfig.nvim",
@@ -83,19 +79,13 @@ require("lazy").setup({ -- Enable Lazy
 	
 	{'b0o/mapx.nvim'}, -- easy keybinds
 	{'dstein64/nvim-scrollview'}, -- scrollbar
-	-- install without yarn or npm
 	{
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 		ft = { "markdown" },
 		build = function() vim.fn["mkdp#util#install"]() end,
 	},
-	--{ -- hint for nvim commands and shortcuts
-	--   "m4xshen/hardtime.nvim",
-	--   dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-	--   opts = {}
-	--},
-	{
+	{ -- multicursor
 		"brenton-leighton/multiple-cursors.nvim",
 		version = "*",  -- Use the latest tagged version
 		opts = {},  -- This causes the plugin setup function to be called

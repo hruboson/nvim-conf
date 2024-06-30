@@ -1,5 +1,4 @@
 local lsp_zero = require('lsp-zero')
-local coq = require('coq')
 
 require("mason").setup()
 require('mason-lspconfig').setup({
@@ -14,7 +13,7 @@ require('mason-lspconfig').setup({
       --- in this example we just use lspconfig
 
       require('lspconfig').clangd.setup(
-        	coq.lsp_ensure_capabilities()
+
         )
     end,
   },})
