@@ -4,18 +4,13 @@ require("mason").setup()
 require('mason-lspconfig').setup({
   ensure_installed = {},
   handlers = {
-    lsp_zero.default_setup,
+    --- lsp_zero.default_setup,
 
-    --- replace `example_server` with the name of a language server
-    clangd = function()
+    --- replace `example_server` with the name of a language server 
+    --- clangd = function()
       --- in this function you can setup
       --- the language server however you want. 
       --- in this example we just use lspconfig
-
-      require('lspconfig').clangd.setup(
-
-        )
-    end,
   },})
 
 lsp_zero.on_attach(function(client, bufnr)
