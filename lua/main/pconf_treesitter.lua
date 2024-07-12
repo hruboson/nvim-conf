@@ -9,7 +9,7 @@ treesitter.setup({
   -- enable syntax highlighting
   highlight = {
 	enable = true,
-    additional_vim_regex_highlighting = true,
+	additional_vim_regex_highlighting = true,
   },
   -- enable indentation
   indent = { enable = true },
@@ -52,3 +52,13 @@ treesitter.setup({
 
 -- set specific highlighting
 vim.api.nvim_set_hl(0, "@type", { link = "Keyword" })
+
+-- set specific parser for filetypes
+vim.filetype.add({
+	extension = {
+		jison = "jison",
+		jisonlex = "jisonlex",
+	}
+})
+vim.treesitter.language.register("javascript", "jison")
+vim.treesitter.language.register("javascript", "jisonlex")

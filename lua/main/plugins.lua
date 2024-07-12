@@ -20,7 +20,7 @@ require("lazy").setup({ -- Enable Lazy
 	{ "wbthomason/packer.nvim" }, -- Have packer manage itself
 	{ "Mofiqul/dracula.nvim" }, -- Dracula theme
 	{ "folke/tokyonight.nvim" }, -- Tokyonight theme
-	{ "nvim-treesitter/nvim-treesitter" }, -- syntax highlighting
+	{ "nvim-treesitter/nvim-treesitter" }, -- syntax highlighting parser packager
 	{ "windwp/nvim-autopairs" }, -- Bracket autopairs
 	{ "lukas-reineke/indent-blankline.nvim" }, -- Leading lines for indentation (vs-code like)
 	{ -- cokeline
