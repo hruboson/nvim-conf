@@ -107,4 +107,9 @@ require("lazy").setup({ -- Enable Lazy
     		{"<Leader>l", "<Cmd>MultipleCursorsLock<CR>", mode = {"n", "x"}, desc = "Lock virtual cursors"},
   		},
 	},
+	{
+		'akinsho/git-conflict.nvim', 
+		version = "*", 
+		config = true
+	},
 })
