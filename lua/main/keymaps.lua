@@ -13,6 +13,7 @@ require'mapx'.setup{ global = true }
 -- INSERT
 inoremap("<C-H>", "<C-W>") -- allow Ctrl+Backspace
 inoremap("<C-Del>", "<C-o>dw")	-- allow Ctrl+Del
+inoremap("U", "<C-r>")
 
 -- NORMAL
 nnoremap("<TAB>", ":bn<cr>") -- alternate between buffers in normal mode using tab 
@@ -31,8 +32,9 @@ nnoremap("s", "\"_s")
 nnoremap("S", "\"_S")
 nnoremap("gx", "\"_gx")
 nnoremap("qf", "<cmd>lua vim.lsp.buf.code_action()<CR>")
+nnoremap("U", "<C-r>")
 
--- VISUAL
+-- VISUAL BLOCK
 -- remap all delete actions to void delete
 xnoremap("d", "\"_d")
 xnoremap("dd", "\"_dd")
@@ -46,3 +48,4 @@ xnoremap("p", "P")
 
 -- VISUAL
 vnoremap("<TAB>", ">gv") -- add multiple tabs to selection in visual mode
+vnoremap("U", "<C-r>")
