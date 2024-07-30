@@ -1,4 +1,5 @@
 vim.opt.clipboard = "unnamedplus" 		-- set os clipboard
+vim.api.nvim_set_option("clipboard", "unnamed")
 vim.opt.ignorecase = true
 vim.opt.number = true					-- show line numbers
 vim.opt.nu = true
