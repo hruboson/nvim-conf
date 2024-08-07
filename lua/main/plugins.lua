@@ -22,8 +22,8 @@ require("lazy").setup({ -- Enable Lazy
 	{ "folke/tokyonight.nvim" }, -- Tokyonight theme
 	{ "nvim-treesitter/nvim-treesitter" }, -- syntax highlighting parser packager
 	{ "windwp/nvim-autopairs" }, -- Bracket autopairs
-	{ "lukas-reineke/indent-blankline.nvim" }, -- Leading lines for indentation (vs-code like)
-	{ -- cokeline
+	{ "lukas-reineke/indent-blankline.nvim" }, -- Leading lines for indentation
+	{ -- cokeline (bufferline)
 	  "willothy/nvim-cokeline",
 	  dependencies = {
 		"nvim-lua/plenary.nvim",        -- Required for v0.4.0+
@@ -35,7 +35,7 @@ require("lazy").setup({ -- Enable Lazy
 	{ "nvim-lualine/lualine.nvim" }, -- Bottom statusline
 	{ "rrethy/vim-illuminate" }, -- Highlight the same keyword as under cursor
 	{ "andweeb/presence.nvim" }, -- Discord rich presence (doesn"t seem to work on Windows)
-	{
+	{ -- dashboard
 		"nvimdev/dashboard-nvim",
 		event = "VimEnter",
 		config = function()
@@ -49,7 +49,7 @@ require("lazy").setup({ -- Enable Lazy
 			}
 		end,
 	},	
-	{
+	{ -- better : commandline
 		"VonHeikemen/fine-cmdline.nvim",
 		dependencies = {
 		    {"MunifTanjim/nui.nvim"}
@@ -79,7 +79,7 @@ require("lazy").setup({ -- Enable Lazy
 	
 	{'b0o/mapx.nvim'}, -- easy keybinds
 	{'dstein64/nvim-scrollview'}, -- scrollbar
-	{
+	{ -- Markdown preview
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 		ft = { "markdown" },
@@ -105,9 +105,9 @@ require("lazy").setup({ -- Enable Lazy
 			{"<Leader>D", "<Cmd>MultipleCursorsJumpNextMatch<CR>", mode = {"n", "x"}, desc = "Jump to next cword"},
 
     		{"<Leader>l", "<Cmd>MultipleCursorsLock<CR>", mode = {"n", "x"}, desc = "Lock virtual cursors"},
-  		},
+		},
 	},
-	{
+	{ -- git conflict resolver
 		'akinsho/git-conflict.nvim', 
 		version = "*", 
 		config = true
