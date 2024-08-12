@@ -12,7 +12,7 @@ require'mapx'.setup{ global = true }
 
 -- INSERT
 inoremap("<C-H>", "<C-W>") -- allow Ctrl+Backspace
-inoremap("<C-Del>", "<C-o>dw")	-- allow Ctrl+Del
+inoremap("<C-Del>", "<C-o>\"_dw")	-- allow Ctrl+Del
 
 -- NORMAL
 nnoremap("<TAB>", ":bn<cr>") -- alternate between buffers in normal mode using tab 
