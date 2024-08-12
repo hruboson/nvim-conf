@@ -35,6 +35,7 @@ require("lazy").setup({ -- Enable Lazy
 	{ "nvim-lualine/lualine.nvim" }, -- Bottom statusline
 	{ "rrethy/vim-illuminate" }, -- Highlight the same keyword as under cursor
 	{ "andweeb/presence.nvim" }, -- Discord rich presence (doesn"t seem to work on Windows)
+	{ "Djancyp/better-comments.nvim" },
 	{ -- dashboard
 		"nvimdev/dashboard-nvim",
 		event = "VimEnter",
