@@ -1,4 +1,5 @@
 require'mapx'.setup{ global = true }
+nnoremap("<SPACE>", "<Nop>")
 vim.g.mapleader = " " -- space as leader key
 
 -- Modes
