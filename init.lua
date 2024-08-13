@@ -8,7 +8,7 @@ require "main.options"
 require "main.theme"
 require "main.keymaps"
 require "main.autoload"	
-require "main.lsp"
+-- require "main.lsp"
 require "main.sftp"
 
 -- plugin files

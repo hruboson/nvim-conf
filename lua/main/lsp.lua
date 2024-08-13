@@ -1,3 +1,5 @@
+--! This file is currently not used as I had some trouble getting the LSP to work properly across platforms
+
 local lsp_zero = require('lsp-zero')
 
 require("mason").setup()

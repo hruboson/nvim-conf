@@ -61,23 +61,35 @@ require("lazy").setup({ -- Enable Lazy
 	{ "nvim-tree/nvim-tree.lua" }, -- File tree window
 	{ "nvim-tree/nvim-web-devicons" }, -- Icons for nvim-tree and other plugins
 
-	{ "nvim-telescope/telescope.nvim" }, -- File explorer
-	{ "nvim-lua/plenary.nvim" }, -- Lua dependecy
-
-	{
-	"williamboman/mason.nvim", -- LSP manager
-	"williamboman/mason-lspconfig.nvim",
-	"neovim/nvim-lspconfig", -- Neovim official LSP support plugin
+	{ -- File explorer and much more
+		"nvim-telescope/telescope.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"debugloop/telescope-undo.nvim", -- undo history
+        	"Snikimonkd/telescope-git-conflicts.nvim", -- git conflicts resolver
+		},
+		config = function()
+			require("telescope").setup({
+				-- the rest of your telescope config goes here
+				extensions = {
+					undo = { },
+					conflicts = { },
+				},
+			})
+			require("telescope").load_extension("undo")
+			require("telescope").load_extension("conflicts")
+		end,
+	}, 
+	{ -- clipboard manager
+		"AckslD/nvim-neoclip.lua",
+		dependencies = {
+			{'nvim-telescope/telescope.nvim'},
+		},
+		config = function()
+		  require('neoclip').setup()
+		end,
 	},
-	
-	-- LSP zero --
-	{'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
-	-- {'neovim/nvim-lspconfig'},
-	-- {'hrsh7th/cmp-nvim-lsp'},
-	-- {'hrsh7th/nvim-cmp'},
-	{'L3MON4D3/LuaSnip'},
-	--
-	
+
 	{'b0o/mapx.nvim'}, -- easy keybinds
 	{'dstein64/nvim-scrollview'}, -- scrollbar
 	{ -- Markdown preview
@@ -107,10 +119,5 @@ require("lazy").setup({ -- Enable Lazy
 
     		{"<Leader>l", "<Cmd>MultipleCursorsLock<CR>", mode = {"n", "x"}, desc = "Lock virtual cursors"},
 		},
-	},
-	{ -- git conflict resolver
-		'akinsho/git-conflict.nvim', 
-		version = "*", 
-		config = true
 	},
 })

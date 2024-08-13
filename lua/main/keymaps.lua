@@ -1,4 +1,5 @@
 require'mapx'.setup{ global = true }
+vim.g.mapleader = " " -- space as leader key
 
 -- Modes
 -- 		NORMAL = "n"
@@ -20,7 +21,19 @@ nnoremap("<C-x>", ":NvimTreeToggle<cr>") -- open/close NvimTree
 nnoremap(":", "<cmd>FineCmdline<CR>")
 nnoremap("gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
 nnoremap("gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
+nnoremap("<leader>rme",":%s/\r//g<CR>") -- remove ^M from end of line, carriage return problem
 -- nnoremap("<C-s>", ":scp % xhrub01@merlin.fit.vutbr.cz:/homes/eva/xh/xhrubo01")
+
+-- Telescope
+nnoremap("<leader>tf", "<cmd>Telescope find_files<CR>")
+nnoremap("<leader>tg", "<cmd>Telescope live_grep<CR>")
+nnoremap("<leader>tb", "<cmd>Telescope buffers<CR>")
+nnoremap("<leader>to", "<cmd>Telescope oldfiles<CR>")
+nnoremap("<leader>ts", "<cmd>Telescope grep_string<CR>")
+nnoremap("<leader>tu", "<cmd>Telescope undo<CR>")
+nnoremap("<leader>tc", "<cmd>Telescope conflicts<CR>")
+nnoremap("<leader>tp", "<cmd>Telescope neoclip plus<CR>")
+
 -- remap all delete actions to void delete (do not copy to clipboard)
 nnoremap("d", "\"_d")
 nnoremap("dd", "\"_dd")
