@@ -50,12 +50,12 @@ require("lazy").setup({ -- Enable Lazy
 			}
 		end,
 	},	
-	{ -- better : commandline
-		"VonHeikemen/fine-cmdline.nvim",
-		dependencies = {
-		    {"MunifTanjim/nui.nvim"}
-		}
-	},
+--	{ -- better : commandline
+--		"VonHeikemen/fine-cmdline.nvim",
+--		dependencies = {
+--		    {"MunifTanjim/nui.nvim"}
+--		}
+--	},
 	{ "mbbill/undotree" }, -- Undo history (git-like)
 
 	{ "nvim-tree/nvim-tree.lua" }, -- File tree window

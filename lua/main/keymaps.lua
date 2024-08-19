@@ -19,7 +19,7 @@ inoremap("<C-Del>", "<C-o>\"_dw")	-- allow Ctrl+Del
 -- NORMAL
 nnoremap("<TAB>", ":bn<cr>") -- alternate between buffers in normal mode using tab 
 nnoremap("<C-x>", ":NvimTreeToggle<cr>") -- open/close NvimTree
-nnoremap(":", "<cmd>FineCmdline<CR>")
+-- nnoremap(":", "<cmd>FineCmdline<CR>")
 nnoremap("gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
 nnoremap("gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
 nnoremap("<leader>rme",":%s/\r//g<CR>") -- remove ^M from end of line, carriage return problem

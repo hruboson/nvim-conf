@@ -17,4 +17,4 @@ vim.opt.fillchars = {eob = " "}			-- remove tildes on blanklines
 vim.opt.mousemoveevent = true 			-- should allow tabs to hover but doesnt work for some reason ://
 vim.opt.undofile = true	
 --vim.cmd[[autocmd FileType * set formatoptions-=cro]] -- disable continuous comments on new line 
-
+vim.opt.inccommand = "nosplit"
