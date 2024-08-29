@@ -99,4 +99,9 @@ require("lazy").setup({ -- Enable Lazy
 		build = function() vim.fn["mkdp#util#install"]() end,
 	},
 	{ "mg979/vim-visual-multi" }, -- multicursor
+
+	-- ----------------------------------
+	-- IDE stuff (autocomplete, lsp, ...)
+	-- ----------------------------------
+	{ 'echasnovski/mini.completion', version = '*' }, -- autocomplete
 })

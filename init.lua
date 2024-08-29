@@ -78,3 +78,5 @@ require('illuminate').configure({ -- illuminate plugin config
 })
 require('presence').setup()
 require('better-comment').Setup()
+
+require('mini.completion').setup()
