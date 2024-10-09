@@ -10,6 +10,7 @@ require "main.keymaps"
 require "main.autoload"	
 -- require "main.lsp"
 require "main.sftp"
+require "main.commands"
 
 -- plugin files
 require "main.pconf_ntree"
