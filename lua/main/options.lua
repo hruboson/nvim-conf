@@ -18,3 +18,10 @@ vim.opt.mousemoveevent = true 			-- should allow tabs to hover but doesnt work f
 vim.opt.undofile = true	
 --vim.cmd[[autocmd FileType * set formatoptions-=cro]] -- disable continuous comments on new line 
 vim.opt.inccommand = "nosplit"
+
+-- ufo.nvim
+vim.opt.foldcolumn = '1' -- '0' is not bad
+vim.opt.foldlevel = 20 -- Using ufo provider need a large value, feel free to decrease the value
+vim.opt.foldlevelstart = 20 
+vim.opt.foldenable = true
+vim.o.fillchars = [[eob: ,fold: ,foldopen:󰅀,foldsep: ,foldclose:]]

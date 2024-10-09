@@ -50,6 +50,7 @@ require("lazy").setup({ -- Enable Lazy
 			}
 		end,
 	},	
+--  the better commandline was not playing well with substitution (:s//)
 --	{ -- better : commandline
 --		"VonHeikemen/fine-cmdline.nvim",
 --		dependencies = {
@@ -99,6 +100,7 @@ require("lazy").setup({ -- Enable Lazy
 		build = function() vim.fn["mkdp#util#install"]() end,
 	},
 	{ "mg979/vim-visual-multi" }, -- multicursor
+	{ "kevinhwang91/nvim-ufo", dependencies = { "kevinhwang91/promise-async" }},
 
 	-- ----------------------------------
 	-- IDE stuff (autocomplete, lsp, ...)
