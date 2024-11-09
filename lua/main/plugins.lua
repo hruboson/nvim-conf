@@ -106,6 +106,7 @@ require("lazy").setup({ -- Enable Lazy
 	{ "mg979/vim-visual-multi" }, -- multicursor
 	{ "kevinhwang91/nvim-ufo", dependencies = { "kevinhwang91/promise-async" }},
 	{ "LunarVim/bigfile.nvim" },
+    { "meznaric/key-analyzer.nvim", opts = {} }, -- find unused keys by :KeyAnalyzer <key>
 
 	-- ----------------------------------
 	-- IDE stuff (autocomplete, lsp, ...)
