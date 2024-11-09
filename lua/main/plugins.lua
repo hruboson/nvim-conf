@@ -91,8 +91,8 @@ require("lazy").setup({ -- Enable Lazy
 		end,
 	},
 
-	{'b0o/mapx.nvim'}, -- easy keybinds
-	{'dstein64/nvim-scrollview'}, -- scrollbar
+	{ "b0o/mapx.nvim" }, -- easy keybinds
+	{ "dstein64/nvim-scrollview"}, -- scrollbar
 	{ -- Markdown preview
 		"OXY2DEV/markview.nvim",
 		lazy = false,      -- Recommended
@@ -105,6 +105,7 @@ require("lazy").setup({ -- Enable Lazy
 	},
 	{ "mg979/vim-visual-multi" }, -- multicursor
 	{ "kevinhwang91/nvim-ufo", dependencies = { "kevinhwang91/promise-async" }},
+	{ "LunarVim/bigfile.nvim" },
 
 	-- ----------------------------------
 	-- IDE stuff (autocomplete, lsp, ...)
