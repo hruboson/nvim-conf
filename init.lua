@@ -45,9 +45,9 @@ require("telescope.builtin")
 require("lualine").setup { -- load lualine
 	options = {
     	icons_enabled = true,
-	    theme = 'nightfly',
-	    component_separators = { left = '', right = ''},
-	    section_separators = { left = '', right = ''},
+	    theme = "nightfly",
+	    component_separators = { left = "", right = ""},
+	    section_separators = { left = "", right = ""},
 	    disabled_filetypes = {
 	    statusline = {},
     	winbar = {},
@@ -62,22 +62,22 @@ require("lualine").setup { -- load lualine
     }
   },
 }
-require('illuminate').configure({ -- illuminate plugin config
+require("illuminate").configure({ -- illuminate plugin config
     -- providers: provider used to get references in the buffer, ordered by priority
     providers = {
-        'lsp',
-        'treesitter',
-        'regex',
+        "lsp",
+        "treesitter",
+        "regex",
     },
     -- delay: delay in milliseconds
     delay = 0,
 	filetypes_denylist = {
-    	'dirvish',
-        'fugitive',
-		'nvimtree',
+    	"dirvish",
+        "fugitive",
+		"nvimtree",
     },
 })
-require('presence').setup()
-require('better-comment').Setup()
-require('mini.completion').setup()
-require('ufo').setup()
+require("presence").setup()
+require("better-comment").Setup()
+require("mini.completion").setup()
+require("ufo").setup()
