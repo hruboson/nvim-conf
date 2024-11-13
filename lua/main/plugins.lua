@@ -59,8 +59,14 @@ require("lazy").setup({ -- Enable Lazy
 --	},
 	{ "mbbill/undotree" }, -- Undo history (git-like)
 
-	{ "nvim-tree/nvim-tree.lua" }, -- File tree window
-	{ "nvim-tree/nvim-web-devicons" }, -- Icons for nvim-tree and other plugins
+	{
+		"nvim-tree/nvim-tree.lua",
+		version = "1.7.1",
+		lazy = false,
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+	},
 
 	{ -- File explorer and much more
 		"nvim-telescope/telescope.nvim",

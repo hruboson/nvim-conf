@@ -1,6 +1,8 @@
 -- set init.vim (now vimrc.vim) file location and run commands (config) in it
 -- local vimrc = vim.fn.stdpath("config") .. "/vimrc.vim"
 -- vim.cmd.source(vimrc)
+vim.g.loaded_netrw = 0
+vim.g.loaded_netrwPlugin = 0
 
 -- include all config files
 require "main.plugins"
