@@ -19,7 +19,7 @@ vim.g.maplocalleader = "\\" -- Same for `maplocalleader`
 require("lazy").setup({ -- Enable Lazy
 	{ "Mofiqul/dracula.nvim" }, -- Dracula theme
 	{ "folke/tokyonight.nvim" }, -- Tokyonight theme
-	{ "nvim-treesitter/nvim-treesitter" }, -- syntax highlighting parser packager
+	{ "nvim-treesitter/nvim-treesitter", version="0.9.2"}, -- syntax highlighting parser packager
 	{ "windwp/nvim-autopairs" }, -- Bracket autopairs
 	{ "lukas-reineke/indent-blankline.nvim" }, -- Leading lines for indentation
 	{ -- cokeline (bufferline)
