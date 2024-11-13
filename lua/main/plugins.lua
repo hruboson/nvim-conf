@@ -17,7 +17,6 @@ vim.g.maplocalleader = "\\" -- Same for `maplocalleader`
 
 -- Install your plugins here
 require("lazy").setup({ -- Enable Lazy
-	{ "wbthomason/packer.nvim" }, -- Have packer manage itself
 	{ "Mofiqul/dracula.nvim" }, -- Dracula theme
 	{ "folke/tokyonight.nvim" }, -- Tokyonight theme
 	{ "nvim-treesitter/nvim-treesitter" }, -- syntax highlighting parser packager
@@ -34,7 +33,7 @@ require("lazy").setup({ -- Enable Lazy
 	},
 	{ "nvim-lualine/lualine.nvim" }, -- Bottom statusline
 	{ "rrethy/vim-illuminate" }, -- Highlight the same keyword as under cursor
-	{ "andweeb/presence.nvim" }, -- Discord rich presence (doesn"t seem to work on Windows)
+	{ "andweeb/presence.nvim" }, -- Discord rich presence (doesn"t seem to work on Linux)
 	{ "Djancyp/better-comments.nvim" },
 	{ -- dashboard
 		"nvimdev/dashboard-nvim",
@@ -110,8 +109,8 @@ require("lazy").setup({ -- Enable Lazy
 	--	}
 	--},
 	{ "mg979/vim-visual-multi" }, -- multicursor
-	{ "kevinhwang91/nvim-ufo", dependencies = { "kevinhwang91/promise-async" }},
-	{ "LunarVim/bigfile.nvim" },
+	{ "kevinhwang91/nvim-ufo", dependencies = { "kevinhwang91/promise-async" }}, -- better folds
+	{ "LunarVim/bigfile.nvim" }, -- big files
     { "meznaric/key-analyzer.nvim", opts = {} }, -- find unused keys by :KeyAnalyzer <key>
 
 	-- ----------------------------------

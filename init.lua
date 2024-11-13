@@ -41,7 +41,7 @@ require("ibl").setup({ -- load indent blankline
 			"nofile",
 			"quickfix"
 		}
-	} 
+	}
 })
 require("telescope.builtin")
 require("lualine").setup { -- load lualine
