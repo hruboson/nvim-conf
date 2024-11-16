@@ -27,6 +27,11 @@ require("nvim-tree").setup({
 	},
 	filters = {
 		dotfiles = false,
+		custom = {
+			"node_modules",
+			".venv",
+			"__pycache__",
+		}
 	},
 	auto_reload_on_write = true,
 })
