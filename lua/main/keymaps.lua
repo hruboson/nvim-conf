@@ -67,3 +67,27 @@ vnoremap("U", "<C-r>")
 -- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
 vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
 vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+
+-- Cokeline (buffer line) mappings
+vim.keymap.set('n', '<leader>q', function()
+	local lazy = require 'cokeline.lazy'
+	local state = lazy 'cokeline.state'
+	local curbufnumber = tonumber(vim.fn.bufnr '%')
+
+	local target_buffer = require('cokeline.buffers').get_current()
+	if not target_buffer then
+		print 'Current buffer not found'
+		return
+	end
+
+	target_buffer:delete()
+end, { desc = 'close buffer' })
+
+-- Windows.nvim
+local function cmd(command)
+   return table.concat({ '<Cmd>', command, '<CR>' })
+end
+vim.keymap.set('n', '<C-w>m', cmd 'WindowsMaximize')
+vim.keymap.set('n', '<C-w>_', cmd 'WindowsMaximizeVertically')
+vim.keymap.set('n', '<C-w>|', cmd 'WindowsMaximizeHorizontally')
+vim.keymap.set('n', '<C-w>=', cmd 'WindowsEqualize')
