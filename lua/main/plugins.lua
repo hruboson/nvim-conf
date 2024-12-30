@@ -84,7 +84,10 @@ require("lazy").setup({ -- Enable Lazy
 	{ "dstein64/nvim-scrollview"}, -- scrollbar
 	{ "mg979/vim-visual-multi" }, -- multicursor
 	{ "LunarVim/bigfile.nvim" }, -- big files
-
+	{ -- auto window layout
+		"anuvyklack/windows.nvim",
+		dependencies = { "anuvyklack/middleclass" },
+	},
 
 
 
