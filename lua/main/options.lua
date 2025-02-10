@@ -25,3 +25,4 @@ vim.opt.foldlevel = 20 -- Using ufo provider need a large value, feel free to de
 vim.opt.foldlevelstart = 20 
 vim.opt.foldenable = true
 vim.o.fillchars = [[eob: ,fold: ,foldopen:󰅀,foldsep: ,foldclose:]]
+vim.opt.scrolloff = 10 

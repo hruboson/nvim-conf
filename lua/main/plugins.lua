@@ -88,6 +88,8 @@ require("lazy").setup({ -- Enable Lazy
 		"anuvyklack/windows.nvim",
 		dependencies = { "anuvyklack/middleclass" },
 	},
+	{ "folke/twilight.nvim" }, -- focus mode
+	{ "folke/zen-mode.nvim", opts = { } }, -- zen mode
 
 
 
@@ -109,6 +111,13 @@ require("lazy").setup({ -- Enable Lazy
 	{ "rrethy/vim-illuminate" }, -- Highlight the same keyword as under cursor
 	{ "Djancyp/better-comments.nvim" }, -- Highlight comments based on rules
 	{ "kevinhwang91/nvim-ufo", dependencies = { "kevinhwang91/promise-async" } }, -- better folds
+	{ -- yank animation
+		"rachartier/tiny-glimmer.nvim",
+		event = "VeryLazy",
+		opts = {
+			-- your configuration
+		},
+	},
 
 
 
