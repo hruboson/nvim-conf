@@ -75,6 +75,7 @@ require("lazy").setup({ -- Enable Lazy
 				extensions = {
 					undo = { },
 					conflicts = { },
+					projects = { },
 				},
 			})
 			require("telescope").load_extension("undo")
@@ -94,18 +95,37 @@ require("lazy").setup({ -- Enable Lazy
 
 
 	--------------------- PRETTY ---------------------
-	{ -- dashboard on startup
+	{
 		"nvimdev/dashboard-nvim",
 		event = "VimEnter",
+		dependencies = { "nvim-telescope/telescope.nvim", "ahmedkhalf/project.nvim" },
 		config = function()
-			require("dashboard").setup {
+			local db = require("dashboard")
+			require("project_nvim").setup {
+				manual_mode = false, -- Automatically detect projects
+				detection_methods = { "pattern" }, -- Detects projects based on patterns
+				patterns = { ".git", "Makefile", "package.json" }, -- What counts as a "project"
+			}
+			require("telescope").load_extension("projects") -- Enable "projects" in Telescope
+
+			db.setup({
+				theme = "doom",
 				config = {
 					header = true,
 					week_header = {
-						enable = true,  -- boolean use a week header
+						enable = true,
 					},
-				}
-			}
+					center = { -- Define only shortcuts, no projects or files
+						{ icon = "📁 ", desc = "Projects", key = "p", action = "Telescope projects" },
+						{ icon = "🔍 ", desc = "Find File", key = "f", action = "Telescope find_files" },
+						{ icon = "📝 ", desc = "New File", key = "n", action = "ene | startinsert" },
+						{ icon = "⚙️  ", desc = "Config", key = "c", action = "edit $MYVIMRC" },
+						{ icon = "❌ ", desc = "Quit", key = "q", action = "qa" },
+					},
+					vertical_center = true, -- Center the Dashboard on the vertical (from top to bottom)
+					footer = { "🚀 Neovim loaded successfully!" }, -- Footer message
+				},
+			})
 		end,
 	},
 	{ "rrethy/vim-illuminate" }, -- Highlight the same keyword as under cursor
@@ -124,6 +144,14 @@ require("lazy").setup({ -- Enable Lazy
 	--------------------- MISCELLANEOUS ---------------------
 	{ "andweeb/presence.nvim" }, -- Discord rich presence (doesn"t seem to work on Linux)
 	{ "meznaric/key-analyzer.nvim", opts = {} }, -- find unused keys by :KeyAnalyzer <key>
+	{ "nvzone/volt", enabled = (vim.g.neovide) }, -- library for some plugins below (WORKS ONLY WITH NEOVIDE ON WINDOWS)
+	{
+		"nvzone/typr",
+		dependencies = "nvzone/volt",
+		opts = {},
+		cmd = { "Typr", "TyprStats" },
+		enabled = (vim.g.neovide),
+	},
 
 
 

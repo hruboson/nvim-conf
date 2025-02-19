@@ -84,3 +84,15 @@ require("better-comment").Setup()
 require("mini.completion").setup()
 require("ufo").setup()
 require("windows").setup()
+
+
+
+----------------------
+-- NEOVIDE SETTINGS --
+----------------------
+-- I'm currently running neovide on Windows, it's a lot smoother and there are almost no problems with plugins (so far)
+
+if vim.g.neovide then
+	vim.opt.guifont = { "FiraCode Nerd Font Mono:h11:-liga"}
+    vim.cmd("cd G:\\Projects\\")  -- Change to your projects directory
+end

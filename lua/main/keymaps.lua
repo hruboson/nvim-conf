@@ -36,6 +36,16 @@ nnoremap("<leader>tu", "<cmd>Telescope undo<CR>")
 nnoremap("<leader>tc", "<cmd>Telescope conflicts<CR>")
 nnoremap("<leader>tp", "<cmd>Telescope neoclip plus<CR>")
 
+-- Switch between projects with Telescope
+vim.keymap.set("n", "<leader>pp", function()
+    -- Open project switcher (Telescope projects)
+    require("telescope").extensions.projects.projects()
+
+    -- After selecting a project, change NvimTree directory
+    local cwd = vim.fn.getcwd()  -- Get the current directory (project root)
+    require('nvim-tree.api').tree.change_root(cwd)  -- Change NvimTree root to new project directory
+end, { desc = "Switch between projects" })
+
 -- remap all delete actions to void delete (do not copy to clipboard)
 nnoremap("d", "\"_d")
 nnoremap("dd", "\"_dd")
