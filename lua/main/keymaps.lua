@@ -14,6 +14,7 @@ vim.g.mapleader = " " -- space as leader key
 
 -- INSERT
 inoremap("<C-H>", "<C-W>") -- allow Ctrl+Backspace
+inoremap("<c-bs>", "<C-W>") -- allow Ctrl+Backspace in Neovide
 inoremap("<C-Del>", "<C-o>\"_dw")	-- allow Ctrl+Del
 
 -- NORMAL
