@@ -79,7 +79,6 @@ require("illuminate").configure({ -- illuminate plugin config
 		"nvimtree",
     },
 })
-require("presence").setup()
 require("better-comment").Setup()
 require("mini.completion").setup()
 require("ufo").setup()
