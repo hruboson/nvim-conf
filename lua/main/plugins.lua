@@ -72,6 +72,16 @@ require("lazy").setup({ -- Enable Lazy
 		config = function()
 			require("telescope").setup({
 				-- the rest of your telescope config goes here
+				defaults = {
+					file_ignore_patterns = {
+						"lib/.*",
+						"lib\\.*", -- screw windows...
+						"node_modules/.*",
+						"node_modules\\.*",
+						".git/.*",
+						".git\\.*",
+					},
+				},
 				extensions = {
 					undo = { },
 					conflicts = { },
