@@ -58,6 +58,7 @@ nnoremap("S", "\"_S")
 nnoremap("gx", "\"_gx")
 nnoremap("qf", "<cmd>lua vim.lsp.buf.code_action()<CR>")
 nnoremap("U", "<C-r>")
+nnoremap("<Esc>", "<cmd>noh<CR>")
 
 -- VISUAL BLOCK
 -- remap all delete actions to void delete
@@ -102,3 +103,20 @@ vim.keymap.set('n', '<C-w>m', cmd 'WindowsMaximize')
 vim.keymap.set('n', '<C-w>_', cmd 'WindowsMaximizeVertically')
 vim.keymap.set('n', '<C-w>|', cmd 'WindowsMaximizeHorizontally')
 vim.keymap.set('n', '<C-w>=', cmd 'WindowsEqualize')
+
+-- Define a function to prompt for a string and search for it
+local function search_and_jump()
+  -- Prompt the user for input
+  local search_string = vim.fn.input("Search: ")
+  -- Search for the string in the buffer
+  if search_string ~= "" then
+    vim.cmd("normal! /" .. search_string .. "\r")
+  end
+end
+
+-- Map <leader>g to the function
+vim.api.nvim_set_keymap('n', '<leader>g', '', {
+  noremap = true,
+  callback = search_and_jump,
+  desc = "Search for a string and jump to the first occurrence",
+})
