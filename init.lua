@@ -83,7 +83,7 @@ require("better-comment").Setup()
 require("mini.completion").setup()
 require("ufo").setup()
 require("windows").setup()
-
+require("Comment").setup()
 
 
 ----------------------

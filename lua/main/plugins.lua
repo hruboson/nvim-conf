@@ -121,6 +121,17 @@ require("lazy").setup({ -- Enable Lazy
 	},
 	{ "folke/twilight.nvim" }, -- focus mode
 	{ "folke/zen-mode.nvim", opts = { } }, -- zen mode
+	{
+		"numToStr/Comment.nvim",
+		opts = {
+			padding = true,
+			sticky = true,
+			opleader = {
+				line = "<leader>c",
+				block = "<leader>cb",
+			}
+		}
+	},
 
 
 
