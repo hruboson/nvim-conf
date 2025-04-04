@@ -1,26 +1,21 @@
---! This file is currently not used as I had some trouble getting the LSP to work properly across platforms
+-- List of language servers and where to install them
+-- JS/TS: https://github.com/typescript-language-server/typescript-language-server
 
-local lsp_zero = require('lsp-zero')
+vim.lsp.config["js-ts"] = {
+	-- Command and arguments to start the server.
+	cmd = { "typescript-language-server", "--stdio" },
 
-require("mason").setup()
-require('mason-lspconfig').setup({
-  ensure_installed = {},
-  handlers = {
-    --- lsp_zero.default_setup,
+	-- Filetypes to automatically attach to.
+	filetypes = { "javascript", "typescript", "js", "ts" },
 
-    --- replace `example_server` with the name of a language server 
-    --- clangd = function()
-      --- in this function you can setup
-      --- the language server however you want. 
-      --- in this example we just use lspconfig
-  },})
+	-- Sets the "root directory" to the parent directory of the file in the
+	-- current buffer that contains either a ".luarc.json" or a
+	-- ".luarc.jsonc" file. Files that share a root directory will reuse
+	-- the connection to the same LSP server.
+	root_markers = { ".gitignore", ".package.json", ".gitattributes", ".tsconfig.json" },
+	settings = {
 
-lsp_zero.on_attach(function(client, bufnr)
-  -- see :help lsp-zero-keybindings
-  -- to learn the available actions
-  lsp_zero.default_keymaps({buffer = bufnr})
-end)
+	}
+}
 
--- LSP
--- lspconfig.pyright.setup{} -- Python
--- lspconfig.ccls.setup{} -- C\C++
+vim.lsp.enable({"js-ts"})

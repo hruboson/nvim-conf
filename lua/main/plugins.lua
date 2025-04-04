@@ -58,6 +58,33 @@ require("lazy").setup({ -- Enable Lazy
 		end,
 	},
 
+	{
+		"luukvbaal/statuscol.nvim",
+		config = function()
+			require("statuscol").setup({
+				relculright = false,
+				segments = {
+					{
+						-- folds
+						text = { require("statuscol.builtin").foldfunc },
+						click = "v:lua.ScFa",
+					},
+					{
+						-- diagnostics
+						sign = { namespace = { "diagnostic/signs" }, maxwidth = 2, auto = true },
+						click = "v:lua.ScSa",
+					},
+					{
+						-- line numbers
+						text = { require("statuscol.builtin").lnumfunc },
+						condition = { true, require("statuscol.builtin").not_empty },
+						click = "v:lua.ScLa",
+					},
+				},
+			})
+		end,
+	},
+
 
 
 	--------------------- HANDY ---------------------

@@ -4,7 +4,7 @@ vim.opt.ignorecase = true
 vim.opt.number = true					-- show line numbers
 vim.opt.nu = true
 vim.opt.relativenumber = true
--- vim.o.statuscolumn = "%s %l %r "
+--vim.o.statuscolumn = "%s %l %r "
 vim.opt.mouse = "a"						-- set default mouse action
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
@@ -26,3 +26,9 @@ vim.opt.foldlevelstart = 20
 vim.opt.foldenable = true
 vim.o.fillchars = [[eob: ,fold: ,foldopen:󰅀,foldsep: ,foldclose:]]
 vim.opt.scrolloff = 10 
+
+vim.diagnostic.config({
+  signs = false, -- Disable showing diagnostic signs in sign column
+  virtual_text = true, -- keep this if you want virtual inline text
+  underline = true,
+})

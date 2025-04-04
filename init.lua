@@ -10,7 +10,7 @@ require "main.options"
 require "main.theme"
 require "main.keymaps"
 require "main.autoload"	
--- require "main.lsp"
+require "main.lsp"
 require "main.sftp"
 require "main.commands"
 
@@ -67,8 +67,6 @@ require("lualine").setup { -- load lualine
 require("illuminate").configure({ -- illuminate plugin config
     -- providers: provider used to get references in the buffer, ordered by priority
     providers = {
-        "lsp",
-        "treesitter",
         "regex",
     },
     -- delay: delay in milliseconds
