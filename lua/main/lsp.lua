@@ -15,7 +15,7 @@ vim.lsp.config["js-ts"] = {
 	root_markers = { ".gitignore", ".package.json", ".gitattributes", ".tsconfig.json" },
 	settings = {
 
-	}
+	},
 }
 
 vim.lsp.enable({"js-ts"})

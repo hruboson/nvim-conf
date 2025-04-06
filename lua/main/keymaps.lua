@@ -103,8 +103,3 @@ vim.keymap.set('n', '<C-w>m', cmd 'WindowsMaximize')
 vim.keymap.set('n', '<C-w>_', cmd 'WindowsMaximizeVertically')
 vim.keymap.set('n', '<C-w>|', cmd 'WindowsMaximizeHorizontally')
 vim.keymap.set('n', '<C-w>=', cmd 'WindowsEqualize')
-
-vim.keymap.set("n", "<leader>ff", function() -- lsp formatter
-	vim.lsp.buf.format({ async = true })
-end, { desc = "LSP Format" })
-vim.keymap.set("n", "=", "=", { noremap = true }) -- indentexpr formatter

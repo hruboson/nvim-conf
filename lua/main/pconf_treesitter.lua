@@ -12,7 +12,7 @@ treesitter.setup({
 	additional_vim_regex_highlighting = true,
   },
   -- enable indentation
-  indent = { enable = true },
+  indent = { enable = false },
   
   -- ensure these language parsers are installed
   -- ensure_installed = { this shit doesnt work on windows and is super slow on startup
