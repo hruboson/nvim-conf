@@ -86,7 +86,13 @@ require("lazy").setup({ -- Enable Lazy
 	},
 	{ -- floating lsp diagnostics
 		'dgagn/diagflow.nvim',
-		opts = {}
+		opts = {
+			format = function(diagnostic)
+				return '[LSP] ' .. diagnostic.message
+			end,
+			scope = "line",
+			show_borders = true,
+		}
 	},
 
 

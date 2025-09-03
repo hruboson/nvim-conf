@@ -83,7 +83,6 @@ require("ufo").setup()
 require("windows").setup()
 require("Comment").setup()
 
-
 ----------------------
 -- NEOVIDE SETTINGS --
 ----------------------
