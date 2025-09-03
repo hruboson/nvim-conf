@@ -44,7 +44,7 @@ require("lazy").setup({ -- Enable Lazy
 		},
 		config = true
 	},
-	{ "nvim-treesitter/nvim-treesitter", version="0.9.2"}, -- syntax highlighting parser packager
+	{ "nvim-treesitter/nvim-treesitter" }, -- syntax highlighting parser packager
 	{ "windwp/nvim-autopairs" }, -- Bracket autopairs
 	{ "lukas-reineke/indent-blankline.nvim" }, -- Leading lines for indentation
 	{ "nvim-lualine/lualine.nvim" }, -- Bottom statusline
@@ -83,6 +83,10 @@ require("lazy").setup({ -- Enable Lazy
 				},
 			})
 		end,
+	},
+	{ -- floating lsp diagnostics
+		'dgagn/diagflow.nvim',
+		opts = {}
 	},
 
 
