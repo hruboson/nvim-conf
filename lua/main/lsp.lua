@@ -1,5 +1,6 @@
 -- List of language servers and where to install them
 -- JS/TS: https://github.com/typescript-language-server/typescript-language-server
+-- GOpls: go install golang.org/x/tools/gopls@latest
 
 vim.lsp.config["js-ts"] = {
 	-- Command and arguments to start the server.
@@ -18,4 +19,11 @@ vim.lsp.config["js-ts"] = {
 	},
 }
 
+vim.lsp.config["gopls"] = {
+	cmd = { "gopls" },
+	filetypes = { "go", "gomod", "gowork", "gotmpl" }, 
+	root_markers = { ".gitignore", ".package.json", ".gitattributes" },
+}
+
 vim.lsp.enable({"js-ts"})
+vim.lsp.enable({"gopls"})
