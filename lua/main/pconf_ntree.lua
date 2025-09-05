@@ -11,7 +11,7 @@ vim.opt.termguicolors = true
 -- empty setup using defaults
 --require("nvim-tree").setup()
 
--- OR setup with some options
+-- my setup
 require("nvim-tree").setup({
 	sort = {
 		sorter = "case_sensitive",
@@ -27,14 +27,57 @@ require("nvim-tree").setup({
 	},
 	filters = {
 		dotfiles = false,
-		custom = {
-			"node_modules",
-			".venv",
-			"__pycache__",
-		}
+		custom = { "node_modules", ".venv", "__pycache__" }
 	},
 	auto_reload_on_write = true,
+
+	on_attach = function(bufnr)
+		local api = require("nvim-tree.api")
+
+		-- Default mappings
+		api.config.mappings.default_on_attach(bufnr)
+
+		-- =====================
+		-- Multi-move extension
+		-- =====================
+		local marked_files = {}
+
+		local function toggle_mark()
+			local node = api.tree.get_node_under_cursor()
+			if not node or node.type ~= "file" then return end
+
+			if marked_files[node.absolute_path] then
+				marked_files[node.absolute_path] = nil
+				vim.notify("Unmarked: " .. node.name)
+			else
+				marked_files[node.absolute_path] = true
+				vim.notify("Marked: " .. node.name)
+			end
+
+		end
+
+		local function move_marked()
+			local node = api.tree.get_node_under_cursor()
+			if not node or node.type ~= "directory" then
+				vim.notify("Cursor must be on a folder!", vim.log.levels.ERROR)
+				return
+			end
+
+			local target_dir = node.absolute_path
+			for path, _ in pairs(marked_files) do
+				local filename = vim.fn.fnamemodify(path, ":t")
+				local new_path = target_dir .. "/" .. filename
+				vim.fn.rename(path, new_path)
+				vim.notify("Moved " .. filename .. " → " .. target_dir)
+			end
+
+			marked_files = {}
+			api.tree.reload()
+		end
+
+		-- custom tree keymaps
+		local opts = { buffer = bufnr, noremap = true, silent = true, nowait = true }
+		vim.keymap.set("n", "mm", toggle_mark, vim.tbl_extend("force", opts, { desc = "Mark/unmark file for move" }))
+		vim.keymap.set("n", "mM", move_marked, vim.tbl_extend("force", opts, { desc = "Move marked files here" }))
+	end,
 })
-
-require'nvim-web-devicons'.setup {}
-

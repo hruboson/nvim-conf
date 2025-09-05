@@ -29,7 +29,7 @@ require("lazy").setup({ -- Enable Lazy
 	--------------------- CORE ---------------------
 	{ -- file explorer
 		"nvim-tree/nvim-tree.lua",
-		version = "1.7.1",
+		--version = "1.7.1",
 		lazy = false,
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
