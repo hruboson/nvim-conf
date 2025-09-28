@@ -1,6 +1,8 @@
--- List of language servers and where to install them
+-- List of language servers and where to install them! 
+
 -- JS/TS: https://github.com/typescript-language-server/typescript-language-server
 -- GOpls: go install golang.org/x/tools/gopls@latest
+-- Python: pip install pylsp-rope
 
 vim.lsp.config["js-ts"] = {
 	-- Command and arguments to start the server.
@@ -9,10 +11,7 @@ vim.lsp.config["js-ts"] = {
 	-- Filetypes to automatically attach to.
 	filetypes = { "javascript", "typescript", "js", "ts" },
 
-	-- Sets the "root directory" to the parent directory of the file in the
-	-- current buffer that contains either a ".luarc.json" or a
-	-- ".luarc.jsonc" file. Files that share a root directory will reuse
-	-- the connection to the same LSP server.
+	-- Sets the "root directory" to the parent directory of the file in the current buffer
 	root_markers = { ".gitignore", ".package.json", ".gitattributes", ".tsconfig.json" },
 	settings = {
 
@@ -22,11 +21,28 @@ vim.lsp.config["js-ts"] = {
 vim.lsp.config["gopls"] = {
 	cmd = { "gopls" },
 	filetypes = { "go", "gomod", "gowork", "gotmpl" }, 
-	root_markers = { ".gitignore", ".package.json", ".gitattributes" },
+	root_markers = { ".git", ".gitignore", ".gitattributes", "go.mod" },
+}
+
+vim.lsp.config["pylsp"] = {
+	cmd = { "pylsp" },
+	filetypes = { "python", "py" }, 
+	root_markers = { ".git", ".gitignore", ".gitattributes", "requirements.txt", "setup.py", "pyproject.toml" },
+	settings = {
+		pylsp = {
+			plugins = {
+				pyflakes = { enabled = true },
+				pycodestyle = { enabled = true },
+				autopep8 = { enabled = false },
+				yapf = { enabled = false },
+			},
+		},
+	},
 }
 
 vim.lsp.enable({"js-ts"})
 vim.lsp.enable({"gopls"})
+vim.lsp.enable({"pylsp"})
 
 -- Diagnostics
 vim.diagnostic.config({
