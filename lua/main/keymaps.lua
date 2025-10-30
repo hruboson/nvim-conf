@@ -30,7 +30,7 @@ nnoremap("<leader>rme",":%s/\r//g<CR>") -- remove ^M from end of line, carriage 
 -- nnoremap("<C-s>", ":scp % xhrub01@merlin.fit.vutbr.cz:/homes/eva/xh/xhrubo01")
 
 -- TERMINAL
-tnoremap('<Esc>', "<C-\\><C-n>")
+tnoremap('<C-Esc>', "<C-\\><C-n>")
 
 -- Telescope
 nnoremap("<leader>tf", "<cmd>Telescope find_files<CR>")
