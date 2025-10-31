@@ -29,6 +29,9 @@ require("nvim-tree").setup({
 		dotfiles = false,
 		custom = { "node_modules", ".venv", "__pycache__" }
 	},
+    git = {
+        ignore = false,  -- show files ignored by git
+    },
 	auto_reload_on_write = true,
 
 	on_attach = function(bufnr)
