@@ -23,6 +23,11 @@ require("lazy").setup({ -- Enable Lazy
 	--------------------- THEMES ---------------------
 	{ "Mofiqul/dracula.nvim" }, -- Dracula theme
 	{ "folke/tokyonight.nvim" }, -- Tokyonight theme
+	{ -- Vague theme
+		"vague-theme/vague.nvim",
+		lazy = false, -- make sure we load this during startup if it is your main colorscheme
+		priority = 1000, -- make sure to load this before all the other plugins
+	},
 
 
 
