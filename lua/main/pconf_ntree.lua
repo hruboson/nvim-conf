@@ -27,11 +27,11 @@ require("nvim-tree").setup({
 	},
 	filters = {
 		dotfiles = false,
-		custom = { "node_modules", ".venv", "__pycache__" }
+		custom = { "node_modules", ".venv", "__pycache__", "build" }
 	},
-	--git = {
-	--   ignore = false,  -- show files ignored by git
-    --},
+	git = {
+	   ignore = false,  -- show files ignored by git, in case of performance issues, add build folder to custom filters
+    },
 	auto_reload_on_write = true,
 
 	on_attach = function(bufnr)
