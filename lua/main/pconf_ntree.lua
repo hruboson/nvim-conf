@@ -41,6 +41,17 @@ require("nvim-tree").setup({
 		api.config.mappings.default_on_attach(bufnr)
 
 		-- =====================
+		-- Rebind change-root
+		-- =====================
+		vim.keymap.del("n", "C", { buffer = bufnr })  -- remove default
+		vim.keymap.set(
+			"n",
+			"<leader>cc",
+			api.tree.change_root_to_node,
+			{ desc = "Change NvimTree root", buffer = bufnr, noremap = true, silent = true }
+		)
+
+		-- =====================
 		-- Multi-move extension
 		-- =====================
 		local marked_files = {}
