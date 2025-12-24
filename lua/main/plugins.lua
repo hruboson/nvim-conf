@@ -228,6 +228,53 @@ require("lazy").setup({ -- Enable Lazy
 			}
 		}
 	},
+	{
+		"esmuellert/vscode-diff.nvim",
+		dependencies = { "MunifTanjim/nui.nvim" },
+		cmd = "CodeDiff",
+		config = function()
+			require("vscode-diff").setup({
+				-- Highlight configuration
+				highlights = {
+					-- Line-level: accepts highlight group names or hex colors (e.g., "#2ea043")
+					line_insert = "DiffAdd",      -- Line-level insertions
+					line_delete = "DiffDelete",   -- Line-level deletions
+
+					-- Character-level: accepts highlight group names or hex colors
+					-- If specified, these override char_brightness calculation
+					char_insert = nil,            -- Character-level insertions (nil = auto-derive)
+					char_delete = nil,            -- Character-level deletions (nil = auto-derive)
+
+					-- Brightness multiplier (only used when char_insert/char_delete are nil)
+					-- nil = auto-detect based on background (1.4 for dark, 0.92 for light)
+					char_brightness = nil,        -- Auto-adjust based on your colorscheme
+				},
+
+				-- Diff view behavior
+				diff = {
+					disable_inlay_hints = true,         -- Disable inlay hints in diff windows for cleaner view
+					max_computation_time_ms = 5000,     -- Maximum time for diff computation (VSCode default)
+				},
+
+				-- Keymaps in diff view
+				keymaps = {
+					view = {
+						quit = "q",                    -- Close diff tab
+						toggle_explorer = "<leader>b",  -- Toggle explorer visibility (explorer mode only)
+						next_hunk = "]c",   -- Jump to next change
+						prev_hunk = "[c",   -- Jump to previous change
+						next_file = "]f",   -- Next file in explorer mode
+						prev_file = "[f",   -- Previous file in explorer mode
+					},
+					explorer = {
+						select = "<CR>",    -- Open diff for selected file
+						hover = "K",        -- Show file diff preview
+						refresh = "R",      -- Refresh git status
+					},
+				},
+			})
+		end,
+	},
 
 
 
@@ -275,6 +322,9 @@ require("lazy").setup({ -- Enable Lazy
 			-- your configuration
 		},
 	},
+	{ -- code context bar
+		"nvim-treesitter/nvim-treesitter-context" 
+	},
 
 
 
@@ -293,28 +343,42 @@ require("lazy").setup({ -- Enable Lazy
 		cmd = { "Typr", "TyprStats" },
 		enabled = (vim.g.neovide),
 	},
-
-
-
-	--------------------- CONFIG ---------------------
-	{ "b0o/mapx.nvim" }, -- easy keybinds
-
+	{ -- binary viewer and editor 
+		'RaafatTurki/hex.nvim' ,
+		config = function(_, opts)
+			require("hex").setup()
+		end
+	},
 
 
 
 	--------------------- IDE (AUTOCOMPLETE, LSP, ...) ---------------------
 	{ "echasnovski/mini.completion", version = "*" }, -- autocomplete
-	{ -- jupiter notebooks
-		"kiyoon/jupynium.nvim",
-		build = "pip3 install --user .",
-		run="pip3 install --user jupynium",
-		-- build = "conda run --no-capture-output -n jupynium pip install .",
-		-- enabled = vim.fn.isdirectory(vim.fn.expand "~/miniconda3/envs/jupynium"),
-		dependencies = {
-			"rcarriga/nvim-notify",   -- optional
-			"stevearc/dressing.nvim", -- optional, UI for :JupyniumKernelSelect
+	{ -- signature helper
+		"Dan7h3x/signup.nvim",
+		branch = "main",
+		opts = {
+			-- Your configuration options here
 		},
+		config = function(_,opts)
+			require("signup").setup(opts)
+		end
 	},
+	{
+		"Cpoing/microscope.nvim",
+		cmd = "MicroscopePeek",
+		keys = {
+			{ "<leader>ld", ":MicroscopePeek<CR>", desc = "Peek definition" },
+		},
+		config = function()
+			require("microscope")
+		end,
+	},
+
+
+
+	--------------------- CONFIG ---------------------
+	{ "b0o/mapx.nvim" }, -- easy keybinds
 
 
 
