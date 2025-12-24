@@ -52,15 +52,8 @@ require("lazy").setup({ -- Enable Lazy
 	{ -- syntax hightlighting parser packager 
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-		lazy = false,
 		config = function()
-			local ok, ts = pcall(require, "nvim-treesitter.configs")
-			if not ok then
-				vim.notify("nvim-treesitter not found!", vim.log.levels.ERROR)
-				return
-			end
-
-			ts.setup({
+			require("nvim-treesitter.configs").setup({
 				-- enable syntax highlighting
 				highlight = {
 					enable = true,
@@ -70,12 +63,27 @@ require("lazy").setup({ -- Enable Lazy
 				-- enable indentation
 				indent = { enable = false },
 
-				-- playground
+				-- ensure these language parsers are installed
+				-- ensure_installed = { this shit doesnt work on windows and is super slow on startup
+				--   "c",
+				--   "cpp",
+				--   "python",
+				--   "json",
+				--   "javascript",
+				--   "html",
+				--   "css",
+				--   "markdown",
+				--   "markdown_inline",
+				--   "bash",
+				--   "lua",
+				--   "vim"
+				-- },
+
 				playground = {
 					enable = true,
 					disable = {},
-					updatetime = 25,
-					persist_queries = false,
+					updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
+					persist_queries = false, -- Whether the query persists across vim sessions
 					keybindings = {
 						toggle_query_editor = 'o',
 						toggle_hl_groups = 'i',
@@ -91,8 +99,10 @@ require("lazy").setup({ -- Enable Lazy
 				},
 			})
 
+			-- set specific highlighting
 			vim.api.nvim_set_hl(0, "@type", { link = "Keyword" })
 
+			-- set specific parser for filetypes
 			vim.filetype.add({
 				extension = {
 					jison = "jison",
@@ -102,7 +112,7 @@ require("lazy").setup({ -- Enable Lazy
 
 			vim.treesitter.language.register("javascript", "jison")
 			vim.treesitter.language.register("javascript", "jisonlex")
-		end,	
+		end,
 	},
 	{ "windwp/nvim-autopairs" }, -- Bracket autopairs
 	{ "lukas-reineke/indent-blankline.nvim" }, -- Leading lines for indentation
