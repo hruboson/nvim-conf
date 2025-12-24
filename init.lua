@@ -16,7 +16,7 @@ require "main.commands"
 
 -- plugin files
 require "main.pconf_ntree"
-require "main.pconf_treesitter"
+--require "main.pconf_treesitter"
 require "main.pconf_cokeline"
 require "nvim-treesitter.configs".setup { -- load treesitter
   highlight = {
