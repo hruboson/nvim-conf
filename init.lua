@@ -13,6 +13,7 @@ require "main.autoload"
 require "main.lsp"
 require "main.sftp"
 require "main.commands"
+require "main.clipboard"
 
 -- plugin files
 require "main.pconf_ntree"
