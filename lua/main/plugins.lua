@@ -53,15 +53,6 @@ require("lazy").setup({ -- Enable Lazy
 	{ "windwp/nvim-autopairs" }, -- Bracket autopairs
 	{ "lukas-reineke/indent-blankline.nvim" }, -- Leading lines for indentation
 	{ "nvim-lualine/lualine.nvim" }, -- Bottom statusline
-	{ -- clipboard manager
-		"AckslD/nvim-neoclip.lua",
-		dependencies = {
-			{'nvim-telescope/telescope.nvim'},
-		},
-		config = function()
-		  require('neoclip').setup()
-		end,
-	},
 
 	{
 		"luukvbaal/statuscol.nvim",
