@@ -75,7 +75,7 @@ xnoremap("X", "\"_X")
 xnoremap("s", "\"_s")
 xnoremap("S", "\"_S")
 xnoremap("gx", "\"_gx")
-xnoremap("p", "P")
+-- xnoremap("p", "P")
 
 -- VISUAL
 vnoremap("<TAB>", ">gv") -- add multiple tabs to selection in visual mode
