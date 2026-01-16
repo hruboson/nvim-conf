@@ -18,7 +18,7 @@ require "main.commands"
 require "main.pconf_ntree"
 require "main.pconf_treesitter"
 require "main.pconf_cokeline"
-require "nvim-treesitter.configs".setup { -- load treesitter
+require "nvim-treesitter.config".setup { -- load treesitter
   highlight = {
     enable = true,              -- false will disable the whole extension
   },
