@@ -85,5 +85,8 @@ require("Comment").setup()
 
 if vim.g.neovide then
 	vim.opt.guifont = { "FiraCode Nerd Font Mono:h11:-liga"}
+end
+
+if (vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1) then
     vim.cmd("cd G:\\Projects\\")  -- Change to your projects directory
 end
