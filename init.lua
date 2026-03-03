@@ -77,6 +77,7 @@ require("mini.completion").setup()
 require("ufo").setup()
 require("windows").setup()
 require("Comment").setup()
+require("size-matters")
 
 ----------------------
 -- NEOVIDE SETTINGS --

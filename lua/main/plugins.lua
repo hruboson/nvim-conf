@@ -266,11 +266,7 @@ require("lazy").setup({ -- Enable Lazy
 
 
 	--------------------- MISCELLANEOUS ---------------------
-	{  "mawillcockson/font-resize.nvim",
-		dependencies = {
-			"rcarriga/nvim-notify",
-		},
-	},
+	{  "tenxsoydev/size-matters.nvim" },
 	{
 		"vyfor/cord.nvim",
 		build = ":Cord update",
