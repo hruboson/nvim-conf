@@ -1,5 +1,10 @@
+vim.fn.mkdir(vim.fn.stdpath("data") .. "/treesitter_parsers", "p")
+vim.opt.runtimepath:append(vim.fn.stdpath("data") .. "/treesitter_parsers")
+
 -- configure treesitter
 require("nvim-treesitter").setup({
+	parser_install_dir = vim.fn.stdpath("data") .. "/treesitter_parsers",
+
   -- enable syntax highlighting
   highlight = {
 	enable = true,
