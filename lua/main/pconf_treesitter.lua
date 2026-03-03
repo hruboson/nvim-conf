@@ -1,39 +1,31 @@
-vim.fn.mkdir(vim.fn.stdpath("data") .. "/treesitter_parsers", "p")
-vim.opt.runtimepath:append(vim.fn.stdpath("data") .. "/treesitter_parsers")
-
 -- configure treesitter
-require("nvim-treesitter").setup({
-	parser_install_dir = vim.fn.stdpath("data") .. "/treesitter_parsers",
+local parser_dir = vim.fn.stdpath("data") .. "/site"
+vim.fn.mkdir(parser_dir, "p")
+vim.opt.runtimepath:append(parser_dir)
+vim.env.TREE_SITTER_DIR = parser_dir
 
+-- Configure treesitter
+require("nvim-treesitter").setup({
+  -- Use the directory treesitter expects
+  parser_install_dir = parser_dir,
+  
+  -- Disable auto-install
+  auto_install = false,
+  
   -- enable syntax highlighting
   highlight = {
-	enable = true,
-	additional_vim_regex_highlighting = true,
+    enable = true,
+    additional_vim_regex_highlighting = true,
   },
+  
   -- enable indentation
   indent = { enable = false },
   
-  -- ensure these language parsers are installed
-  -- ensure_installed = { this shit doesnt work on windows and is super slow on startup
---	"c",
---	"cpp",
---	"python",
---	"json",
---	"javascript",
---	"html",
---	"css",
---	"markdown",
---	"markdown_inline",
---	"bash",
---	"lua",
---	"vim"
---  },
-
-	playground = {
+  playground = {
     enable = true,
     disable = {},
-    updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
-    persist_queries = false, -- Whether the query persists across vim sessions
+    updatetime = 25,
+    persist_queries = false,
     keybindings = {
       toggle_query_editor = 'o',
       toggle_hl_groups = 'i',
@@ -49,15 +41,19 @@ require("nvim-treesitter").setup({
   }
 })
 
+-- Force the parser directory after setup
+local ts_install = require("nvim-treesitter.install")
+ts_install.parser_install_dir = parser_dir
+
 -- set specific highlighting
 vim.api.nvim_set_hl(0, "@type", { link = "Keyword" })
 
 -- set specific parser for filetypes
 vim.filetype.add({
-	extension = {
-		jison = "jison",
-		jisonlex = "jisonlex",
-	}
+  extension = {
+    jison = "jison",
+    jisonlex = "jisonlex",
+  }
 })
 vim.treesitter.language.register("javascript", "jison")
 vim.treesitter.language.register("javascript", "jisonlex")
