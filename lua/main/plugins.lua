@@ -237,7 +237,7 @@ require("lazy").setup({ -- Enable Lazy
 						enable = true,
 					},
 					center = { -- Define only shortcuts, no projects or files
-						{ icon = "📁 ", desc = "Projects", key = "P", action = "Telescope projects" },
+						{ icon = "📁 ", desc = "Projects", key = "<leader>P", action = "Telescope projects" },
 						{ icon = "🔍 ", desc = "Find File", key = "f", action = "Telescope find_files" },
 						{ icon = "📝 ", desc = "New File", key = "n", action = "ene | startinsert" },
 						{ icon = "⚙️  ", desc = "Config", key = "c", action = "edit $MYVIMRC" },
@@ -266,6 +266,11 @@ require("lazy").setup({ -- Enable Lazy
 
 
 	--------------------- MISCELLANEOUS ---------------------
+	{  "mawillcockson/font-resize.nvim",
+		dependencies = {
+			"rcarriga/nvim-notify",
+		},
+	},
 	{
 		"vyfor/cord.nvim",
 		build = ":Cord update",
