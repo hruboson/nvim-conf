@@ -57,3 +57,24 @@ vim.filetype.add({
 })
 vim.treesitter.language.register("javascript", "jison")
 vim.treesitter.language.register("javascript", "jisonlex")
+
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    vim.defer_fn(function()
+      -- Start treesitter for all existing buffers
+      for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+        if vim.api.nvim_buf_is_loaded(buf) then
+          pcall(vim.treesitter.start, buf)
+        end
+      end
+      
+      -- Set up autocmd for new buffers
+      vim.api.nvim_create_autocmd("BufEnter", {
+        pattern = "*",
+        callback = function(args)
+          pcall(vim.treesitter.start, args.buf)
+        end,
+      })
+    end, 100)
+  end,
+})
