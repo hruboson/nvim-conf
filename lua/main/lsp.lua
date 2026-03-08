@@ -4,6 +4,20 @@
 -- GOpls: go install golang.org/x/tools/gopls@latest
 -- Python: pip install pylsp-rope
 
+vim.lsp.config["nix"] = {
+	-- Command and arguments to start the server.
+	cmd = { "nil", "--stdio" },
+
+	-- Filetypes to automatically attach to.
+	filetypes = { "nix", "flake" },
+
+	-- Sets the "root directory" to the parent directory of the file in the current buffer
+	root_markers = { ".gitignore", "flake.nix", "flake.lock" },
+	settings = {
+
+	},
+}
+
 vim.lsp.config["js-ts"] = {
 	-- Command and arguments to start the server.
 	cmd = { "typescript-language-server", "--stdio" },
@@ -40,6 +54,7 @@ vim.lsp.config["pylsp"] = {
 	},
 }
 
+vim.lsp.enable({"nix"})
 vim.lsp.enable({"js-ts"})
 vim.lsp.enable({"gopls"})
 vim.lsp.enable({"pylsp"})
