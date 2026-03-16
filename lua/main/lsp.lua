@@ -54,10 +54,17 @@ vim.lsp.config["pylsp"] = {
 	},
 }
 
+vim.lsp.config["csharp-ls"] = {
+	cmd = { "csharp-ls" },
+	filetypes = { "cs" },
+	root_markers = { ".git", ".sln", ".csproj", "Application.sln" },
+}
+
 vim.lsp.enable({"nix"})
 vim.lsp.enable({"js-ts"})
 vim.lsp.enable({"gopls"})
 vim.lsp.enable({"pylsp"})
+vim.lsp.enable({"csharp-ls"})
 
 -- Diagnostics
 vim.diagnostic.config({
