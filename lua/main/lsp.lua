@@ -54,17 +54,17 @@ vim.lsp.config["pylsp"] = {
 	},
 }
 
-vim.lsp.config["csharp-ls"] = {
-	cmd = { "csharp-ls" },
+vim.lsp.config["omnisharp"] = {
+	cmd = { "omnisharp", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
 	filetypes = { "cs" },
-	root_markers = { ".git", ".sln", ".csproj", "Application.sln" },
+	root_markers = { ".git", ".sln", ".csproj" },
 }
 
 vim.lsp.enable({"nix"})
 vim.lsp.enable({"js-ts"})
 vim.lsp.enable({"gopls"})
 vim.lsp.enable({"pylsp"})
-vim.lsp.enable({"csharp-ls"})
+vim.lsp.enable({"omnisharp"})
 
 -- Diagnostics
 vim.diagnostic.config({
