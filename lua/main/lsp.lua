@@ -55,7 +55,7 @@ vim.lsp.config["pylsp"] = {
 }
 
 vim.lsp.config["omnisharp"] = {
-	cmd = { "omnisharp", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
+	cmd = { "OmniSharp", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
 	filetypes = { "cs" },
 	root_markers = { ".git", ".sln", ".csproj" },
 }
