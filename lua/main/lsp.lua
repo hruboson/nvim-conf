@@ -89,22 +89,3 @@ vim.diagnostic.config({
 	update_in_insert = false,
 	severity_sort = true,
 })
-
-if client.resolved_capabilities.document_highlight then
-	vim.cmd [[
-	hi! LspReferenceRead cterm=bold ctermbg=235 guibg=LightYellow
-	hi! LspReferenceText cterm=bold ctermbg=235 guibg=LightYellow
-	hi! LspReferenceWrite cterm=bold ctermbg=235 guibg=LightYellow
-	]]
-	vim.api.nvim_create_augroup('lsp_document_highlight', {})
-	vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-		group = 'lsp_document_highlight',
-		buffer = 0,
-		callback = vim.lsp.buf.document_highlight,
-	})
-	vim.api.nvim_create_autocmd('CursorMoved', {
-		group = 'lsp_document_highlight',
-		buffer = 0,
-		callback = vim.lsp.buf.clear_references,
-	})
-end
