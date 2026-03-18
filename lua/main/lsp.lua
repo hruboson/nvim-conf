@@ -19,13 +19,8 @@ vim.lsp.config["nix"] = {
 }
 
 vim.lsp.config["js-ts"] = {
-	-- Command and arguments to start the server.
 	cmd = { "typescript-language-server", "--stdio" },
-
-	-- Filetypes to automatically attach to.
 	filetypes = { "javascript", "typescript", "js", "ts" },
-
-	-- Sets the "root directory" to the parent directory of the file in the current buffer
 	root_markers = { ".gitignore", ".package.json", ".gitattributes", ".tsconfig.json" },
 	settings = {
 
@@ -94,3 +89,22 @@ vim.diagnostic.config({
 	update_in_insert = false,
 	severity_sort = true,
 })
+
+if client.resolved_capabilities.document_highlight then
+	vim.cmd [[
+	hi! LspReferenceRead cterm=bold ctermbg=235 guibg=LightYellow
+	hi! LspReferenceText cterm=bold ctermbg=235 guibg=LightYellow
+	hi! LspReferenceWrite cterm=bold ctermbg=235 guibg=LightYellow
+	]]
+	vim.api.nvim_create_augroup('lsp_document_highlight', {})
+	vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+		group = 'lsp_document_highlight',
+		buffer = 0,
+		callback = vim.lsp.buf.document_highlight,
+	})
+	vim.api.nvim_create_autocmd('CursorMoved', {
+		group = 'lsp_document_highlight',
+		buffer = 0,
+		callback = vim.lsp.buf.clear_references,
+	})
+end

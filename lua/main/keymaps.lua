@@ -22,12 +22,17 @@ nnoremap("<TAB>", ":bn<cr>") -- alternate between buffers in normal mode using t
 nnoremap("<S-Tab>", ":bp<cr>") -- alternate to previous
 nnoremap("<C-x>", ":NvimTreeToggle<cr>") -- open/close NvimTree
 -- nnoremap(":", "<cmd>FineCmdline<CR>")
-nnoremap("gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
-nnoremap("gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
-nnoremap("<leader>sr", "<cmd>lua vim.lsp.buf.rename()<CR>")
-nnoremap("<leader>ac", "<cmd>lua vim.lsp.buf.code_action()<CR>")
+
+-- LSP
+-- the only reserved <leader>l* is the <leader>lg that opens Lazygit
+nnoremap("<leader>lD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
+nnoremap("<leader>ld", "<cmd>lua vim.lsp.buf.definition()<CR>")
+nnoremap("<leader>lc", "<cmd>lua vim.lsp.buf.code_action()<CR>")
+nnoremap("<leader>lR", "<cmd>lua vim.lsp.buf.rename()<CR>")
+nnoremap("<leader>lr", "<cmd>lua vim.lsp.buf.references()<CR>")
+nnoremap("<leader>lf", "<cmd>lua vim.lsp.buf.formatting()<CR>")
+
 nnoremap("<leader>rme",":%s/\r//g<CR>") -- remove ^M from end of line, carriage return problem
--- nnoremap("<C-s>", ":scp % xhrub01@merlin.fit.vutbr.cz:/homes/eva/xh/xhrubo01")
 
 -- TERMINAL
 tnoremap('<C-Esc>', "<C-\\><C-n>")
@@ -61,7 +66,6 @@ nnoremap("X", "\"_X")
 nnoremap("s", "\"_s")
 nnoremap("S", "\"_S")
 nnoremap("gx", "\"_gx")
-nnoremap("qf", "<cmd>lua vim.lsp.buf.code_action()<CR>")
 nnoremap("U", "<C-r>")
 nnoremap("<Esc>", "<cmd>noh<CR>")
 
